@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --fb-blue: #1877f2;
+            --fb-blue-dark: #166fe5;
+            --fb-blue-light: #e7f3ff;
+            --fb-gray: #f0f2f5;
+            --fb-dark-gray: #65676b;
+            --fb-black: #1c1e21;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--fb-black);
+            background-color: var(--fb-gray);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--fb-blue);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--fb-blue);
+            border-bottom: 2px solid var(--fb-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: var(--fb-dark-gray);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        .section {
+            background-color: var(--white);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-item {
+            background-color: var(--fb-blue-light);
+            color: var(--fb-blue);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .skill-item:hover {
+            background-color: var(--fb-blue);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--fb-gray);
+        }
+        
+        .experience-item:last-child, .education-item:last-child, .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job-title, .degree {
+            font-weight: 600;
+            color: var(--fb-blue-dark);
+            margin-bottom: 5px;
+        }
+        
+        .company, .university {
+            font-weight: 500;
+            color: var(--fb-dark-gray);
+        }
+        
+        .date {
+            color: var(--fb-dark-gray);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+        
+        .project-links {
+            margin-top: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--fb-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            background-color: var(--fb-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--fb-blue);
+            color: var(--fb-blue);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--fb-blue);
+            color: var(--white);
+        }
+        
+        .accordion {
+            background-color: var(--fb-blue-light);
+            color: var(--fb-black);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.4s;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion:hover {
+            background-color: var(--fb-blue);
+            color: var(--white);
+        }
+        
+        .accordion:after {
+            content: '\002B';
+            color: var(--fb-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-left: 5px;
+        }
+        
+        .accordion:hover:after {
+            color: var(--white);
+        }
+        
+        .active:after {
+            content: "\2212";
+            color: var(--white);
+        }
+        
+        .panel {
+            padding: 0 18px;
+            background-color: var(--white);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            border-radius: 0 0 6px 6px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--fb-blue);
+            color: var(--white);
+            border-radius: 0 0 8px 8px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>John Doe</h1>
+            <p class="tagline">DevOps Engineer | Cloud Specialist | Automation Enthusiast</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:john.doe@example.com">john.doe@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+1234567890">(123) 456-7890</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <p>Results-driven DevOps Engineer with 5+ years of experience in designing, implementing, and maintaining cloud infrastructure and CI/CD pipelines. Passionate about automation, infrastructure as code, and optimizing development workflows. Strong expertise in AWS cloud services, containerization, and configuration management.</p>
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Cloud Services</h3>
+                    <div>
+                        <span class="skill-item">AWS EC2</span>
+                        <span class="skill-item">AWS S3</span>
+                        <span class="skill-item">AWS Lambda</span>
+                        <span class="skill-item">AWS RDS</span>
+                        <span class="skill-item">AWS IAM</span>
+                        <span class="skill-item">AWS VPC</span>
+                        <span class="skill-item">AWS CloudFormation</span>
+                        <span class="skill-item">AWS ECS/EKS</span>
+                        <span class="skill-item">AWS CloudWatch</span>
+                        <span class="skill-item">AWS Route 53</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps Tools</h3>
+                    <div>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Terraform</span>
+                        <span class="skill-item">Ansible</span>
+                        <span class="skill-item">Jenkins</span>
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">GitLab CI/CD</span>
+                        <span class="skill-item">Prometheus</span>
+                        <span class="skill-item">Grafana</span>
+                        <span class="skill-item">ELK Stack</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Scripting</h3>
+                    <div>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Bash</span>
+                        <span class="skill-item">Groovy</span>
+                        <span class="skill-item">YAML</span>
+                        <span class="skill-item">JSON</span>
+                        <span class="skill-item">PowerShell</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">Senior DevOps Engineer</div>
+                <div class="company">Tech Solutions Inc.</div>
+                <div class="date">January 2021 - Present</div>
+                <ul>
+                    <li>Designed and implemented a multi-region AWS infrastructure using Terraform, improving system availability by 99.99%</li>
+                    <li>Led migration from monolithic architecture to microservices using Docker and Kubernetes, reducing deployment times by 60%</li>
+                    <li>Implemented CI/CD pipelines using Jenkins and GitHub Actions, enabling 50+ daily deployments with zero downtime</li>
+                    <li>Automated infrastructure provisioning and configuration management using Ansible, reducing manual work by 80%</li>
+                    <li>Established comprehensive monitoring with Prometheus, Grafana, and CloudWatch, reducing incident response time by 40%</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-title">DevOps Engineer</div>
+                <div class="company">Cloud Innovations LLC</div>
+                <div class="date">March 2018 - December 2020</div>
+                <ul>
+                    <li>Migrated on-premise infrastructure to AWS, reducing infrastructure costs by 35% while improving performance</li>
+                    <li>Implemented Infrastructure as Code using Terraform and CloudFormation for all AWS resources</li>
+                    <li>Created automated deployment pipelines for multiple development teams using Jenkins and GitLab CI</li>
+                    <li>Developed custom monitoring solutions using Python and AWS Lambda functions</li>
+                    <li>Implemented security best practices across all cloud resources, achieving SOC 2 compliance</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+            
+            <button class="accordion">Automated Cloud Infrastructure Deployment</button>
+            <div class="panel">
+                <div class="project-item">
+                    <p>Developed a Terraform-based solution to automate the deployment of complete AWS environments (VPC, EC2, RDS, EKS) with customizable parameters. The solution reduced environment setup time from days to minutes.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn"><i class="fab fa-github"></i> View Code</a>
+                        <a href="#" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="accordion">CI/CD Pipeline Optimization</button>
+            <div class="panel">
+                <div class="project-item">
+                    <p>Redesigned existing CI/CD pipelines using Jenkins and Kubernetes to implement blue-green deployments, canary releases, and automated rollback capabilities. Reduced deployment failures by 75% and improved deployment speed by 40%.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="accordion">Serverless Monitoring System</button>
+            <div class="panel">
+                <div class="project-item">
+                    <p>Built a cost-effective monitoring solution using AWS Lambda, CloudWatch, and Slack integration that provided real-time alerts and custom dashboards for application performance metrics.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn"><i class="fab fa-github"></i> View Code</a>
+                        <a href="#" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="accordion">Kubernetes Cluster Autoscaler</button>
+            <div class="panel">
+                <div class="project-item">
+                    <p>Implemented a custom Kubernetes cluster autoscaler that dynamically adjusted node counts based on workload patterns, saving 30% on cloud compute costs while maintaining performance SLAs.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="degree">Master of Science in Computer Science</div>
+                <div class="university">State University</div>
+                <div class="date">2016 - 2018</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Bachelor of Science in Information Technology</div>
+                <div class="university">City College</div>
+                <div class="date">2012 - 2016</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Certifications</h2>
+            <ul>
+                <li>AWS Certified DevOps Engineer - Professional (2022)</li>
+                <li>Certified Kubernetes Administrator (CKA) (2021)</li>
+                <li>Terraform Associate (2020)</li>
+                <li>AWS Certified Solutions Architect - Associate (2019)</li>
+            </ul>
+            <div style="margin-top: 20px;">
+                <a href="#" class="btn"><i class="fas fa-download"></i> Download Full Resume</a>
+                <a href="#" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2023 John Doe - DevOps Engineer. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Accordion functionality
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+        
+        // Open first project by default
+        if (acc.length > 0) {
+            acc[0].click();
+        }
+    </script>
+</body>
+</html>
